@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeAnalysisWebApplication", "BridgeAnalysisWebApplication.csproj", "{32F02D0F-31ED-481C-82BD-26667F2C1C7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BridgeAnalysisWebApplication", "BridgeAnalysisWebApplication.csproj", "{32F02D0F-31ED-481C-82BD-26667F2C1C7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeAnalysisTests", "..\BridgeAnalysisTests\BridgeAnalysisTests.csproj", "{F6810BC2-5C75-4986-8A09-ADF9027C1D0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{32F02D0F-31ED-481C-82BD-26667F2C1C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32F02D0F-31ED-481C-82BD-26667F2C1C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32F02D0F-31ED-481C-82BD-26667F2C1C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6810BC2-5C75-4986-8A09-ADF9027C1D0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6810BC2-5C75-4986-8A09-ADF9027C1D0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6810BC2-5C75-4986-8A09-ADF9027C1D0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6810BC2-5C75-4986-8A09-ADF9027C1D0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

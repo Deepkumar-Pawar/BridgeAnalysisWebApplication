@@ -19,44 +19,47 @@ namespace BridgeAnalysisWebApplication.Classes
 
         public double[] QuickSort(double[] array, int start, int end)
         {
-            if (start == end)
+            if (start >= end)
             {
                 return array;
             }
 
-            int left = start;
-            int right = end;
+            int pivot = start;
 
-            int pivotIndex = left;
-            double pivot = array[pivotIndex];
+            int left = start + 1, right = end;
 
-            while (left < right)
+            double[] sorted = new double[array.Length];
+
+            array.CopyTo(sorted, 0);
+
+            int index = start;
+
+            for (int i = start + 1; i < end + 1; i++)
             {
-                while (pivot > array[left])
+                if (array[i] < array[pivot])
                 {
-                    left++;
-                }
-
-                while (pivot < array[right])
-                {
-                    right--;
-                }
-
-                if (pivot < array[left] & pivot > array[right])
-                {
-                    double temp2 = array[left];
-                    array[left] = array[right];
-                    array[right] = temp2;
+                    sorted[index] = array[i];
+                    index++;
                 }
             }
-            double temp = pivot;
-            array[pivotIndex] = array[left];
-            array[left] = temp;
 
-            array = QuickSort(array, start, left);
-            array = QuickSort(array, right, end);
+            left = index - 1;
+            sorted[index] = array[pivot];
+            index++;
+            right = index;
 
-            return array;
+            for (int i = start + 1; i < end + 1; i++)
+            {
+                if (array[i] > array[pivot])
+                {
+                    sorted[index] = array[i];
+                    index++;
+                }
+            }
+            sorted = QuickSort(sorted, start, left);
+            sorted = QuickSort(sorted, right, end);
+
+            return sorted;
         }
 
         public void EvaluateBridgeForces(double beamLength, Pillar[] pillars, LoadDistribution loadDistribution)
