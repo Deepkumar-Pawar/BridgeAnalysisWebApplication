@@ -12,13 +12,35 @@ namespace BridgeAnalysisWebApplication.Classes
 
         public Pillar[] ArrangePillarsInOrder(Pillar[] pillars)
         {
-            Pillar[] p = new Pillar[5];
+            int length = pillars.Length;
+            double[] distances = new double[length];
+            
+            for (int i = 0; i < length; i++)
+            {
+                distances[i] = pillars[i].DistanceFromEnd;
+            }
 
-            return p;
+            distances = QuickSort(distances, 0, length - 1);
+
+            Pillar[] arrangedPillars = new Pillar[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    if (distances[i] == pillars[j].DistanceFromEnd)
+                    {
+                        arrangedPillars[i] = pillars[j];
+                    }
+                }
+            }
+
+            return arrangedPillars;
         }
 
         public double[] QuickSort(double[] array, int start, int end)
         {
+
             if (start >= end)
             {
                 return array;
