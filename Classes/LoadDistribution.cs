@@ -8,6 +8,6 @@ namespace BridgeAnalysisWebApplication.Classes
 {
     public class LoadDistribution
     {
-        public Dictionary<double, Load> LoadsDistancesDict { get; set; }
+        public Dictionary<double, double> LoadsDistancesDict { get; set; }
     }
 }

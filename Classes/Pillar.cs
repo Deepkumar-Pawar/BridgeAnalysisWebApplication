@@ -9,7 +9,7 @@ namespace BridgeAnalysisWebApplication.Classes
     {
 
         public double DistanceFromEnd { get; set; }
-        public double ReactionForceUpwards { get; set; }
+        public double ReactionForceUpwards { get; set; } = 0d;
 
     }
 }

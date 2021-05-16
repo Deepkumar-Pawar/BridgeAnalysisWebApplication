@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BridgeAnalysisWebApplication.Interfaces
 {
-    interface BridgeSupport
+    public interface BridgeSupport
     {
     }
 }
