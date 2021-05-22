@@ -10,6 +10,8 @@ namespace BridgeAnalysisWebApplication.Classes
     {
         public Beam BridgeBeam { get; set; }
         public Pillar[] Pillars { get; set; }
+        public double BridgeObjectLoadPerLength { get; set; }
+        public double BridgeTotalLoadPerLength { get; set; }
 
         public Pillar[] ArrangePillarsInOrder()
         {

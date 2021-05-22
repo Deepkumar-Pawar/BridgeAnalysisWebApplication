@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace BridgeAnalysisWebApplication.Models
 {
-    public class Load
+    public class Material
     {
         [Key]
         public string Name { get; set; }
-        [Required]
-        public double Magnitude { get; set; }
-        [Required]
-        public double Length { get; set; }
+        public double ModulusOfRupture { get; set; }
+        public double ShearStrength { get; set; }
+        public double YoungsModulus { get; set; }
     }
 }
