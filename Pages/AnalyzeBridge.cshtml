@@ -1,0 +1,21 @@
+﻿@page
+@model BridgeAnalysisWebApplication.Pages.AnalyzeBridgeModel
+@{
+    ViewData["Title"] = "Analyze Bridge";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Analyze Bridge</h1>
+    <p>Please enter the following inputs required:</p>
+</div>
+
+<form method="post">
+    Beam Details (please enter in SI units):<br><br>
+    <div>Enter Length: <input type="number" name="beamLength"></div>
+    <div>Enter Width: <input type="number" name="beamWidth"></div>
+    <div>Enter Height: <input type="number" name="beamHeight"></div>
+    <div>Enter Weight: <input type="number" name="beamWeight"></div>
+    <div>Enter Name of Material from list of available materials: <input type="text" name="beamMaterial"></div>
+    <div>Enter Type of Load on the Bridge <input type="text" name="loadType"></div>
+    <div><input type="submit"></div>
+</form>

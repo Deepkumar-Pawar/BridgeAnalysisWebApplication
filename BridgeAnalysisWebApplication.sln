@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BridgeAnalysisWebApplication", "BridgeAnalysisWebApplication.csproj", "{32F02D0F-31ED-481C-82BD-26667F2C1C7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeAnalysisTests", "..\BridgeAnalysisTests\BridgeAnalysisTests.csproj", "{8B7CC6A2-22A9-4D5F-BBA3-D4C3A054A970}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BridgeAnalysisTests", "..\BridgeAnalysisTests\BridgeAnalysisTests.csproj", "{8B7CC6A2-22A9-4D5F-BBA3-D4C3A054A970}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

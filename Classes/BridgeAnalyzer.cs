@@ -8,11 +8,9 @@ namespace BridgeAnalysisWebApplication.Classes
     public class BridgeAnalyzer
     {
 
-        public bool AnalyzeBridge(BeamBridge bridge)
+        public bool AnalyzeBridge(BeamBridge bridge, double factorOfSafety)
         {
-
-
-            return true;
+            return BeamStressTest(bridge, factorOfSafety) & ShearStrengthTest(bridge, factorOfSafety) & DeflectionTest(bridge, factorOfSafety);
         }
 
         public bool BeamStressTest(BeamBridge bridge, double factorOfSafety)
@@ -39,7 +37,7 @@ namespace BridgeAnalysisWebApplication.Classes
             return true;
         }
 
-        public bool ShearStrength(BeamBridge bridge, double factorOfSafety)
+        public bool ShearStrengthTest(BeamBridge bridge, double factorOfSafety)
         {
             double maxInternalShearForce = 0;
             double shearStress = 0;
