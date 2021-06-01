@@ -13,6 +13,14 @@ namespace BridgeAnalysisWebApplication.Classes
         public double BridgeObjectLoadPerLength { get; set; }
         public double BridgeTotalLoadPerLength { get; set; }
 
+        public BeamBridge(Beam bridgeBeam, Pillar[] pillars, double bridgeObjectLoadPerLength, double bridgeTotalLoadPerLength)
+        {
+            this.BridgeBeam = bridgeBeam;
+            this.Pillars = pillars;
+            this.BridgeObjectLoadPerLength = bridgeObjectLoadPerLength;
+            this.BridgeTotalLoadPerLength = bridgeTotalLoadPerLength;
+        }
+
         public Pillar[] ArrangePillarsInOrder()
         {
             int length = Pillars.Length;

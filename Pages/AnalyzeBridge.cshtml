@@ -1,8 +1,6 @@
 ﻿@page
 @model BridgeAnalysisWebApplication.Pages.AnalyzeBridgeModel
-@{
-    ViewData["Title"] = "Analyze Bridge";
-}
+@{ ViewData["Title"] = "Analyze Bridge"; }
 
 <div class="text-center">
     <h1 class="display-4">Analyze Bridge</h1>
@@ -11,11 +9,36 @@
 
 <form method="post">
     Beam Details (please enter in SI units):<br><br>
-    <div>Enter Length: <input type="number" name="beamLength"></div>
-    <div>Enter Width: <input type="number" name="beamWidth"></div>
-    <div>Enter Height: <input type="number" name="beamHeight"></div>
-    <div>Enter Weight: <input type="number" name="beamWeight"></div>
-    <div>Enter Name of Material from list of available materials: <input type="text" name="beamMaterial"></div>
-    <div>Enter Type of Load on the Bridge <input type="text" name="loadType"></div>
+    <div>Enter Length: <input type="text" name="beamLength"></div>
+    <div>Enter Width: <input type="text" name="beamWidth"></div>
+    <div>Enter Height: <input type="text" name="beamHeight"></div>
+    <div>Enter Weight: <input type="text" name="beamWeight"></div>
+    <div>Enter Number of Pillars for the Bridge, including ones at the ends: <input type="number" name="numOfPillars"></div>
+
+    @for (int i = 0; i < Model.numOfPillars; i++)
+    {
+        <div>Enter Distance from End for this Pillar: <input type="text" name=@("pillarDistance" + i.ToString())></div>
+    }
+
+    <div>
+        Enter Name of Material from list of available materials: <select class="form-control" name="beamMaterialName">
+            @for (int i = 0; i < Model.materials.Count; i++)
+            {
+<option>@Model.materials.ToArray()[i].Name</option>}
+        </select>
+    </div>
+
+    <div>
+        Enter Type of Load on the Bridge from list of available types: <select class="form-control" name="loadTypeName">
+            @for (int i = 0; i < Model.loads.Count; i++)
+            {
+<option>@Model.loads.ToArray()[i].Name</option>}
+        </select>
+    </div>
+
+    <div>Enter Factor of Safety for the Bridge (default is @Model.defaultFactorOfSafety): <input type="text" name="factorOfSafety"></div>
+
     <div><input type="submit"></div>
 </form>
+
+@Model.message

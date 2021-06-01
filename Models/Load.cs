@@ -8,11 +8,20 @@ namespace BridgeAnalysisWebApplication.Models
 {
     public class Load
     {
-        [Key]
         public string Name { get; set; }
-        [Required]
         public double Magnitude { get; set; }
-        [Required]
         public double Length { get; set; }
+
+        public Load(string name, double magnitude, double length)
+        {
+            this.Name = name;
+            this.Magnitude = magnitude;
+            this.Length = length;
+        }
+
+        public Load()
+        {
+
+        }
     }
 }
