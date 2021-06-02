@@ -9,15 +9,15 @@
 
 <form method="post">
     Beam Details (please enter in SI units):<br><br>
-    <div>Enter Length: <input type="text" name="beamLength"></div>
-    <div>Enter Width: <input type="text" name="beamWidth"></div>
-    <div>Enter Height: <input type="text" name="beamHeight"></div>
-    <div>Enter Weight: <input type="text" name="beamWeight"></div>
-    <div>Enter Number of Pillars for the Bridge, including ones at the ends: <input type="number" name="numOfPillars"></div>
+    <div>Enter Length: <br><input type="text" name="beamLength"></div><br>
+    <div>Enter Width: <br><input type="text" name="beamWidth"></div><br>
+    <div>Enter Height: <br><input type="text" name="beamHeight"></div><br>
+    <div>Enter Weight: <br><input type="text" name="beamWeight"></div><br>
+    <div>Enter Number of Pillars for the Bridge (including ones at the ends): <input type="number" name="numOfPillars"></div><br>
 
     @for (int i = 0; i < Model.numOfPillars; i++)
     {
-        <div>Enter Distance from End for this Pillar: <input type="text" name=@("pillarDistance" + i.ToString())></div>
+        <div>Enter Distance from End for this Pillar: <input type="text" name=@("pillarDistance" + i.ToString())></div><br>
     }
 
     <div>
@@ -26,7 +26,7 @@
             {
 <option>@Model.materials.ToArray()[i].Name</option>}
         </select>
-    </div>
+    </div><br>
 
     <div>
         Enter Type of Load on the Bridge from list of available types: <select class="form-control" name="loadTypeName">
@@ -34,11 +34,13 @@
             {
 <option>@Model.loads.ToArray()[i].Name</option>}
         </select>
-    </div>
+    </div><br>
 
-    <div>Enter Factor of Safety for the Bridge (default is @Model.defaultFactorOfSafety): <input type="text" name="factorOfSafety"></div>
+    <div>Enter Factor of Safety for the Bridge (default is @Model.defaultFactorOfSafety): <input type="text" name="factorOfSafety"></div><br>
 
     <div><input type="submit"></div>
 </form>
 
+<br>
+<br>
 @Model.message

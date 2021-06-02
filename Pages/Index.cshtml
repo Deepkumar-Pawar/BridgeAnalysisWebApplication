@@ -1,10 +1,18 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
+@{ ViewData["Title"] = "Home page"; }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>This is a program designed to help you analyze and test a bridge.</p>
+    <p>This is an application designed to help you analyze and test your bridge.</p>
 </div>
+
+<br>
+<br>
+Go to <a asp-area="" asp-page="/AnalyzeBridge">Analyze Bridge</a> to use the application to analyze your bridge.
+<br>
+<br>
+Go to <a asp-area="" asp-page="/ViewMaterials">View Materials</a> to view the available materials you can use for your bridge.
+<br>
+<br>
+Go to <a asp-area="" asp-page="/ViewLoads">View Loads</a> to view the available loads you can have on your bridge.
