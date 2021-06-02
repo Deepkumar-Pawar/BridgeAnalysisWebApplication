@@ -6,8 +6,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\ViewMaterials.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.8" />
     <PackageReference Include="MySql.Data" Version="8.0.25" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\ViewMaterials.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\ViewMaterials.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\ViewMaterials.cshtml" />
   </ItemGroup>
 
 </Project>

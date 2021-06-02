@@ -1,0 +1,43 @@
+﻿@page
+@model BridgeAnalysisWebApplication.Pages.ViewLoadsModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">View Loads</h1>
+</div>
+<br>
+These are the loads stored that can be used for bridge analysis:
+<br>
+<br>
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                @foreach (string columnName in Model.loadColumnNames)
+                {
+                    <th>@columnName</th>
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+            @using BridgeAnalysisWebApplication.Models
+            @foreach (Load load in Model.loads)
+            {
+                <tr>
+                    <td>@load.Name</td>
+                    <td>@load.Magnitude</td>
+                    <td>@load.Length</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<br>
+<br>
+<a asp-area="" asp-page="/CreateLoad">Create a New Load</a>
+<br>
+<a asp-area="" asp-page="/RemoveLoad">Remove a Load</a>

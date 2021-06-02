@@ -1,0 +1,25 @@
+﻿@page
+@model BridgeAnalysisWebApplication.Pages.CreateLoadModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create Load</h1>
+</div>
+<br>
+Enter the following values required in SI units to create a new Load:
+<br>
+<br>
+
+<form method="post">
+    <div>Enter Name (should be unique): <input type="text" name="loadName"></div>
+    <div>Enter Magnitude of the Load (should be a positive real number): <input type="text" name="loadMagnitude"></div>
+    <div>Enter Length of the Load (should be a positive real number): <input type="text" name="loadLength"></div>
+
+    <div><input type="submit"></div>
+</form>
+@Model.message
+
+<br>
+<br>
+<a asp-area="" asp-page="/ViewLoads">View Loads</a>

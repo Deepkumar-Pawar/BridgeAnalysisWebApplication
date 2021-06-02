@@ -1,0 +1,22 @@
+﻿@page
+@model BridgeAnalysisWebApplication.Pages.RemoveLoadModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Remove Load</h1>
+</div>
+<br>
+Enter the Name of the Load you wish to remove:
+<br>
+<br>
+
+<form method="post">
+    <div><input type="text" name="loadName"></div>
+    <div><input type="submit"></div>
+</form>
+@Model.message
+
+<br>
+<br>
+<a asp-area="" asp-page="/ViewLoads">View Loads</a>
