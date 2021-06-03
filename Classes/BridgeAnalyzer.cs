@@ -53,7 +53,7 @@ namespace BridgeAnalysisWebApplication.Classes
 
                 if (shearStress > bridge.BridgeBeam.BeamMaterial.ShearStrength / factorOfSafety)
                 {
-
+                    return false;
                 }
             }
 
@@ -66,7 +66,7 @@ namespace BridgeAnalysisWebApplication.Classes
             double maxDeflection = 0;
             double elasticSectionModulus = bridge.BridgeBeam.Width * Math.Pow(bridge.BridgeBeam.Height, 2) / 6;
             double areaMomentOfInertia = elasticSectionModulus * bridge.BridgeBeam.Height / 2;
-            double w = bridge.BridgeObjectLoadPerLength / 2;
+            double w = bridge.BridgeObjectLoadPerLength;
 
             for (int i = 0; i < bridge.Pillars.Length - 1; i++)
             {
