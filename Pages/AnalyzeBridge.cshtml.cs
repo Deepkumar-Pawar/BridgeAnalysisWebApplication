@@ -23,13 +23,13 @@ namespace BridgeAnalysisWebApplication.Pages
 
         private IMemoryCache _cache;
 
-        public void OnGet()
+        public void OnGet()     //This is called when the page is loaded hence it is used for intialization purposes
         {
             GetMaterialsAndLoads();
             _cache.Set<int>("NumOfPillars", 0);
         }
 
-        public void OnPost()
+        public void OnPost()        //This is called whenever the submit button is presses hence here, the data from the forms is converted into the right data structures and then they are passed into the bridge analysis algorithm function to yield and display a result
         {
             GetMaterialsAndLoads();
 
@@ -87,7 +87,7 @@ namespace BridgeAnalysisWebApplication.Pages
 
                     if (pillarsAreValid)
                     {
-                        Beam bridgeBeam = new Beam(Double.Parse(beamLength), Double.Parse(beamHeight), Double.Parse(beamWidth), beamMaterial);
+                        Beam bridgeBeam = new Beam(Double.Parse(beamLength), Double.Parse(beamHeight), Double.Parse(beamWidth), Double.Parse(beamWeight), beamMaterial);
 
                         double bridgeObjectLoadPerLength = beamLoad.Magnitude / beamLoad.Length;
                         double bridgeTotalLoadPerLength = bridgeObjectLoadPerLength + (Double.Parse(beamWeight) / Double.Parse(beamLength));
@@ -132,12 +132,12 @@ namespace BridgeAnalysisWebApplication.Pages
             _cache.Set<int>("NumOfPillars", numOfPillars);
         }
 
-        public bool ValidatePillarDistanceValue(string pillarDistance, string beamLength)
+        public bool ValidatePillarDistanceValue(string pillarDistance, string beamLength)       //Function to validate pillar distance from end values as doubles and non negatives
         {
             return (Double.TryParse(pillarDistance, out double distance) && distance >= 0 && distance <= Double.Parse(beamLength));
         }
 
-        public bool ValidateValues(string beamLength, string beamWidth, string beamHeight, string beamWeight)
+        public bool ValidateValues(string beamLength, string beamWidth, string beamHeight, string beamWeight)       //Function to validate beam dimensional values as doubles and non negatives
         {
             bool areValid = true;
 
@@ -169,7 +169,7 @@ namespace BridgeAnalysisWebApplication.Pages
             _cache = memoryCache;
         }
 
-        public void GetMaterialsAndLoads()
+        public void GetMaterialsAndLoads()      //Function to get Material and Load data from database
         {
             materials = new List<Material>();
             loads = new List<Load>();

@@ -26,4 +26,8 @@
     <None Include="Pages\ViewMaterials.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>

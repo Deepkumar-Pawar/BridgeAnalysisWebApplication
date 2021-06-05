@@ -42,7 +42,7 @@ namespace BridgeAnalysisWebApplication.Pages
             }
         }
 
-        public bool ValidateValues(string loadName, string loadMagnitude, string loadLength)
+        public bool ValidateValues(string loadName, string loadMagnitude, string loadLength)        //Validate values
         {
             bool areValid = true;
 

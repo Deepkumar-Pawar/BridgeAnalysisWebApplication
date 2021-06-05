@@ -14,11 +14,12 @@ namespace BridgeAnalysisWebApplication.Classes
         public double Weight { get; set; }
         public Material BeamMaterial { get; set; }
 
-        public Beam(double length, double height, double width, Material beamMaterial)
+        public Beam(double length, double height, double width, double weight, Material beamMaterial)
         {
             this.Length = length;
             this.Height = height;
             this.Width = width;
+            this.Weight = weight;
             this.BeamMaterial = beamMaterial;
         }
     }

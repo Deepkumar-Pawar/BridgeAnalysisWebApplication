@@ -21,7 +21,12 @@ namespace BridgeAnalysisWebApplication.Classes
             this.BridgeTotalLoadPerLength = bridgeTotalLoadPerLength;
         }
 
-        public Pillar[] ArrangePillarsInOrder()
+        public BeamBridge()
+        {
+
+        }
+
+        public Pillar[] ArrangePillarsInOrder()     //Function to arrange pillars in order of their distance from end
         {
             int length = Pillars.Length;
             double[] distances = new double[length];
@@ -49,7 +54,7 @@ namespace BridgeAnalysisWebApplication.Classes
             return arrangedPillars;
         }
 
-        public double[] QuickSort(double[] array, int start, int end)
+        public double[] QuickSort(double[] array, int start, int end)       //Quicksort implementation to sort an array of doubles
         {
 
             if (start >= end)
@@ -67,7 +72,7 @@ namespace BridgeAnalysisWebApplication.Classes
 
             int index = start;
 
-            for (int i = start + 1; i < end + 1; i++)
+            for (int i = start + 1; i < end + 1; i++)       //Changed from: for (int i = start + 1; i < end; i++)
             {
                 if (array[i] < array[pivot])
                 {
@@ -93,47 +98,6 @@ namespace BridgeAnalysisWebApplication.Classes
             sorted = QuickSort(sorted, right, end);
 
             return sorted;
-        }
-
-        public void EvaluateBridgeForces(LoadDistribution loadDistribution)
-        {
-
-            int pillarsNum = Pillars.Length;
-            double[] distances = new double[pillarsNum];
-
-            for (int i = 0; i < pillarsNum; i++)
-            {
-                distances[i] = Pillars[i].DistanceFromEnd;
-            }
-
-            foreach (double loadDistance in loadDistribution.LoadsDistancesDict.Keys)
-            {
-                for (int i = 0; i < pillarsNum - 1; i++)
-                {
-                    if (loadDistance == distances[i])
-                    {
-                        Pillars[i].ReactionForceUpwards += loadDistribution.LoadsDistancesDict[loadDistance];
-                        break;
-                    }
-                    if (loadDistance > distances[i] && loadDistance < distances[i + 1])
-                    {
-                        Pillars[i].ReactionForceUpwards += loadDistribution.LoadsDistancesDict[loadDistance] / 2;
-                        Pillars[i + 1].ReactionForceUpwards += loadDistribution.LoadsDistancesDict[loadDistance] / 2;
-                        break;
-                    }
-                }
-                if (loadDistance == distances[pillarsNum - 1])
-                {
-                    Pillars[pillarsNum - 1].ReactionForceUpwards += loadDistribution.LoadsDistancesDict[loadDistance];
-                }
-            }
-
-            double beamWeightDistribution = BridgeBeam.Weight / pillarsNum;
-
-            foreach (Pillar pillar in Pillars)
-            {
-                pillar.ReactionForceUpwards += beamWeightDistribution;
-            }
         }
 
     }

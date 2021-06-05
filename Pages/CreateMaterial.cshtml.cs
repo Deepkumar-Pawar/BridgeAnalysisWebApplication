@@ -43,7 +43,7 @@ namespace BridgeAnalysisWebApplication.Pages
             }
         }
 
-        public bool ValidateValues(string materialName, string materialModulusOfRupture, string materialShearStrength, string materialYoungsModulus)
+        public bool ValidateValues(string materialName, string materialModulusOfRupture, string materialShearStrength, string materialYoungsModulus)        //Validate values
         {
             bool areValid = true;
 

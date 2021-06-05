@@ -17,6 +17,5 @@ namespace BridgeAnalysisWebApplication.Classes
             this.DistanceFromEnd = distanceFromEnd;
             this.PillarMaterial = pillarMaterial;
         }
-
     }
 }
